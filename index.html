@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shaxsiy Portfolio | Kamoladdin</title>
+  <meta name="description" content="Python & Django Developer / IT Mentor shaxsiy portfoliysi. Khorezm, O'zbekiston.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #0d6efd; /* Bootstrap primary */
+      --text: #1f2937;
+      --muted: #6b7280;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --ring: rgba(13,110,253,.25);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, "Noto Sans", 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    .navbar {
+      backdrop-filter: saturate(180%) blur(10px);
+      -webkit-backdrop-filter: saturate(180%) blur(10px);
+      background: rgba(255, 255, 255, 0.85) !important;
+      box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06);
+    }
+
+    .navbar-brand {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    .nav-link { position: relative; }
+    .nav-link.active::after,
+    .nav-link:hover::after {
+      content: "";
+      position: absolute;
+      left: .5rem; right: .5rem; bottom: .35rem;
+      height: 2px;
+      background: var(--brand);
+      border-radius: 2px;
+    }
+
+    .hero {
+      padding-top: 7rem;
+      padding-bottom: 4rem;
+    }
+
+    .badge-soft {
+      background: rgba(13,110,253,.08);
+      color: var(--brand);
+      border: 1px solid rgba(13,110,253,.15);
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle { color: var(--muted); }
+
+    .card {
+      border: 1px solid rgba(2, 6, 23, 0.06);
+      box-shadow: 0 1px 2px rgba(2,6,23,0.04), 0 2px 10px rgba(2,6,23,0.04);
+    }
+
+    .icon-xxl { font-size: 2.25rem; }
+    .icon-xl { font-size: 1.5rem; }
+
+    .skill-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--card);
+      border: 1px solid rgba(2, 6, 23, 0.08);
+      box-shadow: 0 1px 0 rgba(2, 6, 23, 0.04);
+      padding: .5rem .75rem;
+      border-radius: .75rem;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .skill-chip:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(2,6,23,0.08); }
+
+    .contact-card:focus-within {
+      outline: 2px solid var(--ring);
+      outline-offset: 2px;
+    }
+
+    footer { color: var(--muted); }
+
+    /* Better anchor offset for fixed navbar */
+    section[id] { scroll-margin-top: 90px; }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="90" tabindex="0">
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top bg-white">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Kamoladdin</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Menyuni ochish">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#about">Men haqimda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Ko'nikmalar</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Tajriba</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Loyihalar</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Aloqa</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero / About Intro -->
+  <header id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-7">
+          <span class="badge rounded-pill badge-soft mb-3"><i class="bi bi-geo-alt me-1"></i>Khorezm, O'zbekiston</span>
+          <h1 class="display-5 fw-bold mb-3">Python & Django Developer / IT Mentor</h1>
+          <p class="lead text-secondary mb-4">Zamonaviy veb-yechimlar, backend servislar va o'quv dasturlarini ishlab chiqish bilan shug'ullanaman. Toza arxitektura, avtomatlashtirish va samarali jamoaviy ish tarafdoriman.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#contact" class="btn btn-primary btn-lg"><i class="bi bi-send me-2"></i>Bog'lanish</a>
+            <a href="#projects" class="btn btn-outline-primary btn-lg"><i class="bi bi-briefcase me-2"></i>Loyihalar</a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-5">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center gap-3">
+                <div class="bg-primary-subtle text-primary rounded-3 p-3">
+                  <i class="bi bi-code-slash icon-xxl"></i>
+                </div>
+                <div>
+                  <h2 class="h4 mb-1">Kamoladdin</h2>
+                  <div class="text-secondary">Python & Django Developer / IT Mentor</div>
+                </div>
+              </div>
+              <hr class="my-4">
+              <div class="row g-3 small">
+                <div class="col-12 col-sm-6 d-flex align-items-center gap-2">
+                  <i class="bi bi-envelope text-primary"></i>
+                  <a class="link-underline link-underline-opacity-0" href="mailto:otaxonovkamoladdinn@gmail.com">otaxonovkamoladdinn@gmail.com</a>
+                </div>
+                <div class="col-12 col-sm-6 d-flex align-items-center gap-2">
+                  <i class="bi bi-telegram text-primary"></i>
+                  <a class="link-underline link-underline-opacity-0" href="https://t.me/username" target="_blank" rel="noopener">@username</a>
+                </div>
+                <div class="col-12 col-sm-6 d-flex align-items-center gap-2">
+                  <i class="bi bi-mortarboard text-primary"></i>
+                  <span>TATU Urganch filiali (Tatuni) bitirgan</span>
+                </div>
+                <div class="col-12 col-sm-6 d-flex align-items-center gap-2">
+                  <i class="bi bi-translate text-primary"></i>
+                  <span>Ingliz tili darajasi: A2</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row justify-content-between align-items-start g-4">
+        <div class="col-12 col-lg-7">
+          <h3 class="section-title">Men haqimda</h3>
+          <p class="section-subtitle">Khorezm, O'zbekistonda yashayman. Backend dasturlash va ta'lim yo'nalishida faoliyat yuritaman.</p>
+          <p>Python va Django yordamida ishonchli server tomon ilovalarini yarataman. REST API, autentifikatsiya, ma'lumotlar bazasi dizayni va joylashtirish (deploy) jarayonlarida tajribaga egaman. Mentorlika faoliyatida o'quvchilarga amaliy loyihalar orqali tushunchalarni berishga e'tibor qarataman.</p>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <span class="skill-chip"><i class="bi bi-cpu"></i> Sun'iy intellektga qiziqaman</span>
+            <span class="skill-chip"><i class="bi bi-robot"></i> Mashinaviy o'qitish</span>
+            <span class="skill-chip"><i class="bi bi-camera-video"></i> Kompyuter ko'rish</span>
+            <span class="skill-chip"><i class="bi bi-lightning"></i> Zamonaviy veb texnologiyalar</span>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title mb-3"><i class="bi bi-person-badge me-2"></i>Tezkor ma'lumot</h5>
+              <ul class="list-unstyled small mb-0">
+                <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i> Python & Django Developer / IT Mentor</li>
+                <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i> Tatuni bitirgan</li>
+                <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i> Ingliz tili: A2</li>
+                <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i> Git, GitHub, Linux asoslari</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="row align-items-end mb-4">
+        <div class="col">
+          <h3 class="section-title mb-1">Ko'nikmalar</h3>
+          <p class="section-subtitle mb-0">Ishlay oladigan texnologiyalarim</p>
+        </div>
+      </div>
+
+      <div class="row g-3 g-md-4">
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <i class="bi bi-filetype-html icon-xxl text-danger"></i>
+              <h6 class="mt-3 mb-1">HTML</h6>
+              <small class="text-secondary">Semantik belgilash</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <i class="bi bi-filetype-css icon-xxl text-primary"></i>
+              <h6 class="mt-3 mb-1">CSS</h6>
+              <small class="text-secondary">Responsive dizayn</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <i class="bi bi-bootstrap-fill icon-xxl text-indigo"></i>
+              <h6 class="mt-3 mb-1">Bootstrap</h6>
+              <small class="text-secondary">Tez prototiplash</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <i class="bi bi-filetype-py icon-xxl text-warning"></i>
+              <h6 class="mt-3 mb-1">Python</h6>
+              <small class="text-secondary">Backend, skriptlar</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <i class="bi bi-diagram-3 icon-xxl text-success"></i>
+              <h6 class="mt-3 mb-1">Django</h6>
+              <small class="text-secondary">REST API, Admin</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <i class="bi bi-git icon-xxl text-danger"></i>
+              <h6 class="mt-3 mb-1">Git & GitHub</h6>
+              <small class="text-secondary">Versiya nazorati</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <i class="bi bi-terminal icon-xxl text-dark"></i>
+              <h6 class="mt-3 mb-1">Linux & Terminal</h6>
+              <small class="text-secondary">Asosiy buyruqlar</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <i class="bi bi-collection icon-xxl text-secondary"></i>
+              <h6 class="mt-3 mb-1">Boshqa</h6>
+              <small class="text-secondary">Docker asoslari, CI/CD</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col">
+          <h3 class="section-title mb-1">Tajriba</h3>
+          <p class="section-subtitle mb-0">Ish tajribam va faoliyatim</p>
+        </div>
+      </div>
+
+      <div class="row g-3 g-md-4">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body d-flex flex-column flex-md-row align-items-start gap-3">
+              <div class="text-primary bg-primary-subtle rounded-3 p-3">
+                <i class="bi bi-people-fill icon-xl"></i>
+              </div>
+              <div class="flex-grow-1">
+                <h5 class="mb-1">Mentor – “Al-Xorazmiy Vorislari” loyihasi</h5>
+                <div class="text-secondary small mb-2">Hozirgi vaqt • Khorezm</div>
+                <p class="mb-0">O'quvchilar uchun amaliy dasturlash darslarini tashkil etish, loyihalar asosida o'qitish, algoritm va dasturlash asoslarini mustahkamlash.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body d-flex flex-column flex-md-row align-items-start gap-3">
+              <div class="text-primary bg-primary-subtle rounded-3 p-3">
+                <i class="bi bi-building icon-xl"></i>
+              </div>
+              <div class="flex-grow-1">
+                <h5 class="mb-1">Xususiy maktab – dasturlash o'qituvchisi</h5>
+                <div class="text-secondary small mb-2">1 yil • Khorezm</div>
+                <p class="mb-0">Maktab o'quvchilariga Python va dasturlash asoslarini o'rgatish, loyihaviy fikrlashni rivojlantirish, musobaqalarga tayyorlash.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col">
+          <h3 class="section-title mb-1">Loyihalar</h3>
+          <p class="section-subtitle mb-0">Ba'zi ish namunalarim (demo)</p>
+        </div>
+      </div>
+
+      <div class="row g-3 g-md-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <h5 class="mb-0">Django Blog API</h5>
+                <span class="badge text-bg-light border"><i class="bi bi-code me-1"></i>REST</span>
+              </div>
+              <p class="text-secondary small mb-3">JWT autentifikatsiya, CRUD postlar, admin panel va testlar bilan REST API.</p>
+              <div class="d-flex gap-2">
+                <a class="btn btn-outline-primary btn-sm" href="#"><i class="bi bi-box-arrow-up-right me-1"></i>Demo</a>
+                <a class="btn btn-outline-secondary btn-sm" href="#"><i class="bi bi-github me-1"></i>Kod</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <h5 class="mb-0">Qaydnoma (To-do) ilova</h5>
+                <span class="badge text-bg-light border"><i class="bi bi-layers me-1"></i>Django</span>
+              </div>
+              <p class="text-secondary small mb-3">Foydalanuvchi ro'yxatdan o'tishi, vazifalarni boshqarish va filtrlash funksiyalari.</p>
+              <div class="d-flex gap-2">
+                <a class="btn btn-outline-primary btn-sm" href="#"><i class="bi bi-box-arrow-up-right me-1"></i>Demo</a>
+                <a class="btn btn-outline-secondary btn-sm" href="#"><i class="bi bi-github me-1"></i>Kod</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <h5 class="mb-0">Portfoliolar sayti</h5>
+                <span class="badge text-bg-light border"><i class="bi bi-bootstrap-fill me-1"></i>Bootstrap</span>
+              </div>
+              <p class="text-secondary small mb-3">Yengil, tezkor va moslashuvchan bir sahifali shaxsiy portfolio shabloni.</p>
+              <div class="d-flex gap-2">
+                <a class="btn btn-outline-primary btn-sm" href="#"><i class="bi bi-box-arrow-up-right me-1"></i>Demo</a>
+                <a class="btn btn-outline-secondary btn-sm" href="#"><i class="bi bi-github me-1"></i>Kod</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col">
+          <h3 class="section-title mb-1">Aloqa</h3>
+          <p class="section-subtitle mb-0">Menga xabar qoldiring yoki ijtimoiy tarmoqlarda yozing</p>
+        </div>
+      </div>
+
+      <div class="row g-3 g-md-4">
+        <div class="col-12 col-lg-6">
+          <div class="card h-100 contact-card">
+            <div class="card-body">
+              <h5 class="card-title mb-3"><i class="bi bi-chat-dots me-2"></i>Tezkor aloqa</h5>
+              <ul class="list-unstyled small mb-4">
+                <li class="mb-2"><i class="bi bi-envelope text-primary me-2"></i><a href="mailto:otaxonovkamoladdinn@gmail.com">otaxonovkamoladdinn@gmail.com</a></li>
+                <li class="mb-2"><i class="bi bi-telegram text-primary me-2"></i><a href="https://t.me/username" target="_blank" rel="noopener">@username</a></li>
+                <li class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>Khorezm, O'zbekiston</li>
+              </ul>
+              <div class="d-flex gap-2">
+                <a class="btn btn-primary" href="mailto:otaxonovkamoladdinn@gmail.com"><i class="bi bi-send me-2"></i>Email yuborish</a>
+                <a class="btn btn-outline-primary" href="https://t.me/username" target="_blank" rel="noopener"><i class="bi bi-telegram me-2"></i>Telegram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title mb-3"><i class="bi bi-envelope-open me-2"></i>Xabar yuborish</h5>
+              <form class="needs-validation" novalidate>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label" for="name">Ismingiz</label>
+                    <input id="name" type="text" class="form-control" placeholder="Ism Familiya" required>
+                    <div class="invalid-feedback">Iltimos, ismingizni kiriting.</div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label" for="email">Email</label>
+                    <input id="email" type="email" class="form-control" placeholder="email@example.com" required>
+                    <div class="invalid-feedback">Yaroqli email kiriting.</div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label" for="topic">Mavzu</label>
+                    <input id="topic" type="text" class="form-control" placeholder="Hamkorlik / Buyurtma" required>
+                    <div class="invalid-feedback">Mavzuni kiriting.</div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="message">Xabar</label>
+                    <textarea id="message" class="form-control" rows="4" placeholder="Xabaringizni yozing..." required></textarea>
+                    <div class="invalid-feedback">Xabar matnini kiriting.</div>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <button class="btn btn-primary" type="submit"><i class="bi bi-send me-2"></i>Yuborish</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <small>© <span id="year"></span> Kamoladdin. Barcha huquqlar himoyalangan.</small>
+      <div class="d-flex align-items-center gap-3">
+        <a class="text-secondary" href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a class="text-secondary" href="https://t.me/username" target="_blank" rel="noopener" aria-label="Telegram"><i class="bi bi-telegram"></i></a>
+        <a class="text-secondary" href="#home" aria-label="Yuqoriga"><i class="bi bi-arrow-up-short"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <script>
+    // Dinamik yil
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Bootstrap scrollspy uchun qayta ishga tushirish (rasmiy tavsiya)
+    const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+      target: '#navbar',
+      offset: 90
+    });
+
+    // Forma tekshiruvi (Bootstrap validation)
+    (function () {
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
+</body>
+</html>
+
+
